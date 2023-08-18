@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
           pokeInfo.innerHTML = `
-            <h2>${data.name}</h2>
+            <h2>${data.name.toUpperCase()}</h2>
             <img src="${data.sprites.front_default}" alt="${data.name}">
-            <p>Height: ${data.height}</p>
-            <p>Weight: ${data.weight}</p>
+            <p>Altura: ${data.height}</p>
+            <p>Peso: ${data.weight}</p>
           `;
         })
         .catch(error => {
