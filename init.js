@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 const cont = document.getElementById("cont");
-let poke_nmbr = 25
-const poke_data = "https://pokeapi.co/api/v2/pokemon/${poke_nmbr}";
+const poke_data = "https://pokeapi.co/api/v2/pokemon/";
 
 
 fetch("poke_data")
