@@ -2,10 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const pokeInput = document.getElementById("pokeInput");
     const searchButton = document.getElementById("searchButton");
     const pokeInfo = document.getElementById("pokeInfo");
+    const divCom = document.getElementById("com");
+    const userInput = document.getElementById("usuario");
+    const commentInput = document.getElementById("comentario")
+    const submit = document.getElementById("btn")
 
     searchButton.addEventListener("click", () => {
     
       let pokeDato = pokeInput.value;
+
+      divCom.innerHTML = "";
         
 
       const url = `https://pokeapi.co/api/v2/pokemon/${pokeDato}`;
@@ -23,11 +29,30 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => {
           console.error("Hubo un error:", error);
         });
-    });
+
+
+      fetch('/comments.json')
+      .then(response => response.json())
+      .then(data => {
+      
+      const comments = data.comments; // Almacena el arreglo de comentarios en una variable
+
+      for (let i = 0; i < comments.length; i++) {
+      const comment = comments[i];
+      divCom.innerHTML += `<div class="comClass">
+        <p>${comment.user_name + " " + stars(comment.score)}</p>
+        <p>${comment.content}</p>
+      </div>`;
+    }
+  })
+  .catch(error => {
+    console.error("Hubo un error al cargar el archivo JSON de comentarios:", error);
   });
+    });
+
+
  
-    const container2 = document.getElementById("cont2");
-    const COMMENTS_URL ="comments.json";
+    
 
     //Llamamos un fetch que recorre el JSON de comentarios del producto, recorriendo cada uno con el forEach e imprimiendo
     //su información en pantalla
@@ -44,36 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
       body: JSON.stringify(update),
       };
 
-  fetch(COMMENTS_URL)
-  .then(data => {
-    comments.forEach(comment => {
-      container2.innerHTML += `<div class="card mb-3">
-      <p>${comment.user_name + " " + comment.score}</p>
-      <p>${comment.content}</p>
-      </div>
-      `;
-  });                     
-      if (!data.ok) {
-          throw Error(data.status);
-          
-      }
-      return data.json();
-  })
-  .then(update => {
-    container2.innerHTML += `<p>${update}</p>`
-      console.log(update);
-  })
-  .catch(e => {
-      console.log(e);
-  });
 
-    //Funcion con un switch que cumple la función de poner muchos if, en su lugar compara el parametro starNbr con cada uno de los case
-    //En el caso de que el parametro no concuerde con ningún case, se va al default "Error de puntaje"
-    //La función muestra las estrellas correspondenties en base al puntaje definido
 
     function stars (starNbr) {
-        switch (starNbr) {
-            case 1:
+      switch (starNbr) {
+        case 1:
             return `<span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
@@ -108,3 +108,4 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log(`Error de puntaje`);
         }
     }
+  });

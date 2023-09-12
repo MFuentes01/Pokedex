@@ -4,3 +4,8 @@ body {
     background-size: cover;
     color: white;
 }
+
+.comClass {
+    background-color: antiquewhite;
+    color: black;
+}
