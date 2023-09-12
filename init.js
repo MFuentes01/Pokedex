@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-      fetch('/comments.json')
+      fetch('comments.json')
       .then(response => response.json())
       .then(data => {
       
