@@ -1,0 +1,29 @@
+{
+    "comments": [
+        {
+            "user_name": "Juan Gomez",
+            "content": "Mediocre desempeño",
+            "score": 2
+        },
+        {
+        "user_name": "Milagros",
+        "content": "Nefasto :C",
+        "score": 1 
+        },
+        {
+            "user_name": "Mari Carmen",
+            "content": "Casi Buenardo :D",
+            "score": 4
+        },
+        {
+            "user_name": "Esteban kito",
+            "content": "Es funcional pero mhe",
+            "score": 3   
+        },
+        {
+            "user_name": "Coscu",
+            "content": "Completamente anashe",
+            "score": 5
+        }
+    ]
+}
