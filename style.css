@@ -5,10 +5,22 @@ body {
     color: white;
 }
 
+.comentarios{
+  text-align: justify;
+  margin-left: 30vb;
+}
+label{
+  color: white;
+  padding: 3px;
+
+}
 .comClass {
-    background-color: rgba(169, 189, 227, 0.516);
+    background-color: rgba(169, 189, 227, 0.703);
     color: black;
     font-weight: bold;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    border-radius: 15px;
 }
 
 .fa-star {

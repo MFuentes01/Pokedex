@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
       
-      const comments = data.comments; // Almacena el arreglo de comentarios en una variable
+      const comments = data.comments; 
 
       for (let i = 0; i < comments.length; i++) {
       const comment = comments[i];
