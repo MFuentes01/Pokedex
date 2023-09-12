@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const pokeInfo = document.getElementById("pokeInfo");
     const divCom = document.getElementById("com");
     const userInput = document.getElementById("usuario");
-    const commentInput = document.getElementById("comentario")
-    const submit = document.getElementById("btn")
+    const commentInput = document.getElementById("comentario");
+    const submit = document.getElementById("btn");
+    const score = document.getElementById("puntaje");
 
     searchButton.addEventListener("click", () => {
     
@@ -50,25 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
     });
 
+  
+    submit.addEventListener('click', function () {
 
- 
-    
+      divCom.innerHTML += `<div class="comClass">
+        <p>${userInput.value + " " + stars(parseInt(score.value))}</p>
+        <p>${commentInput.value}</p>
+      </div>`;
 
-    //Llamamos un fetch que recorre el JSON de comentarios del producto, recorriendo cada uno con el forEach e imprimiendo
-    //su información en pantalla
-    const update = {
-      title: "Comentario",
-      //body: [nameField.value, lastnameField.value, birthdateField.value]
-  }
-
-  const options = {
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(update),
-      };
-
+    })
+          
+              
+              
+        
 
 
     function stars (starNbr) {
@@ -107,5 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
             default:
                 console.log(`Error de puntaje`);
         }
+      }
+
     }
-  });
+
+  )
+
