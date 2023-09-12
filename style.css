@@ -6,6 +6,15 @@ body {
 }
 
 .comClass {
-    background-color: antiquewhite;
+    background-color: rgba(169, 189, 227, 0.516);
     color: black;
+    font-weight: bold;
 }
+
+.fa-star {
+    color: #333;
+  }
+  
+  .checked {
+    color: #fbc02d;
+  }
