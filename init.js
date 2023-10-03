@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const commentInput = document.getElementById("comentario");
     const submit = document.getElementById("btn");
     const score = document.getElementById("puntaje");
+    const add = document.getElementById("add")
 
     searchButton.addEventListener("click", () => {
     
@@ -26,6 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>Altura: ${data.height}</p>
             <p>Peso: ${data.weight}</p>
           `;
+
+       add.addEventListener("click", function(){
+        
+          // Convertir los datos a una cadena JSON
+      const pokemonDataJSON = JSON.stringify(data);
+
+      // Guardar la cadena JSON en el Local Storage
+      localStorage.setItem("localpokemon", pokemonDataJSON);
+      console.log(pokemonDataJSON)
+          
+       })
+      
+          
         })
         .catch(error => {
           console.error("Hubo un error:", error);

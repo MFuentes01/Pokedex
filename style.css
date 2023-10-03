@@ -1,9 +1,15 @@
 body {
+  
+    width: 100%;
+    height: auto;
     text-align: center;
     background-image: url(https://www.wallpapers.net/web/wallpapers/cool-pokemon-hd-wallpaper/3840x2160.jpg);
-    background-size: cover;
+    background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
     color: white;
 }
+
 
 .comentarios{
   text-align: justify;
